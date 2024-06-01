@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #222;
+    background-color: #1e1e1e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,11 +19,20 @@ body {
     border-radius: 25px;
     text-align: center;
     padding: 40px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.date-time {
+    text-align: right;
+    margin-bottom: 20px;
+}
+.date-time p {
+    font-size: 14px;
+    color: #ccc;
 }
 .search {
     width: 100%;
@@ -43,6 +52,10 @@ body {
     flex: 1;
     font-size: 18px;
     margin-right: 10px;
+    transition: background-color 0.3s;
+}
+.search input:focus {
+    background-color: #d6f5f1;
 }
 .search button {
     border: 0;
@@ -55,6 +68,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s;
+}
+.search button:hover {
+    background-color: #d6f5f1;
 }
 .search button img {
     width: 20px;
@@ -62,17 +79,21 @@ body {
 .weather-icon {
     width: 100px;
     margin-top: 20px;
+    transition: transform 0.5s;
 }
 .weather h1 {
     font-size: 60px;
     margin-top: 10px;
+    animation: fadeIn 1s;
 }
 .weather h2 {
     font-size: 30px;
     margin-top: 10px;
+    animation: fadeIn 1s;
 }
 .details {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 30px;
 }
@@ -80,12 +101,14 @@ body {
     display: flex;
     align-items: center;
     text-align: left;
+    margin-bottom: 15px;
 }
 .col img {
     width: 40px;
     margin-right: 10px;
+    animation: fadeIn 1s;
 }
-.humidity, .wind {
+.humidity, .wind, .pressure, .sunrise, .sunset {
     font-size: 20px;
     margin: 0;
 }
@@ -97,4 +120,21 @@ body {
     font-size: 18px;
     display: none;
     color: rgb(197, 48, 48);
+    animation: fadeIn 1s;
+}
+.loading {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
