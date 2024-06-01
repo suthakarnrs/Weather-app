@@ -6,15 +6,22 @@
     <title>Weather Application</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp">
+        <div class="date-time animate__animated animate__fadeInRight">
+            <p id="current-time"></p>
+        </div>
         <div class="search">
             <input type="text" placeholder="Enter the city" spellcheck="false">
-            <button><img src="images/search.png"></button>
+            <button><img src="images/search.png" alt="Search"></button>
         </div>
         <div class="error">
             <h4>Invalid City Name</h4>
+        </div>
+        <div class="loading">
+            <h4>Loading...</h4>
         </div>
         <div class="weather">
             <img src="images/clear.png" class="weather-icon" alt="Weather Icon">
@@ -33,6 +40,27 @@
                     <div>
                         <p class="wind">15 km/h</p>
                         <p>Wind Speed</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/pressure.png" alt="Pressure Icon">
+                    <div>
+                        <p class="pressure">1013 hPa</p>
+                        <p>Pressure</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/sunrise.webp" alt="Sunrise Icon">
+                    <div>
+                        <p class="sunrise">6:00 AM</p>
+                        <p>Sunrise</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/sunset.png" alt="Sunset Icon">
+                    <div>
+                        <p class="sunset">6:00 PM</p>
+                        <p>Sunset</p>
                     </div>
                 </div>
             </div>
